@@ -6,6 +6,7 @@
   "scripts": {
     "minor": "npm version minor && git push --tags && git push",
     "patch": "npm version patch && git push --tags && git push",
+    "start": "node ./node_modules/nodemon/bin/nodemon.js ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +22,12 @@
     "mongodb"
   ],
   "author": "Brendan Conrad",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "boom": "^7.3.0",
+    "fastify": "^2.4.1",
+    "fastify-swagger": "^2.4.0",
+    "mongoose": "^5.5.11",
+    "nodemon": "^1.19.0"
+  }
 }
