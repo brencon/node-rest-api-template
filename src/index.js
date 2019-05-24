@@ -13,6 +13,12 @@ mongoose.connect('mongodb://localhost/mycargarage')
 
 const routes = require('./routes');
 
+// Import Swagger Options
+const swagger = require('./config/swagger');
+
+// Register Swagger
+fastify.register(require('fastify-swagger'), swagger.options);
+
 routes.forEach((route, index) => {
   fastify.route(route);
 });
@@ -26,6 +32,7 @@ fastify.get('/', async (request, reply) => {
 const start = async () => {
   try {
     await fastify.listen(3000);
+    fastify.swagger();
     fastify.log.info(`server listening on ${fastify.server.address().port}`)
   } catch (err) {
     fastify.log.error(err);
