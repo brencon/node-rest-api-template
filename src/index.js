@@ -4,12 +4,18 @@ const fastify = require('fastify')({
 });
 
 // Require external modules
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 // Connect to DB
 mongoose.connect('mongodb://localhost/mycargarage')
   .then(() => console.log('MongoDB connected...'))
   .catch(err => console.log(err));
+
+const routes = require('./routes');
+
+routes.forEach((route, index) => {
+  fastify.route(route);
+});
 
 // Declare a route
 fastify.get('/', async (request, reply) => {
