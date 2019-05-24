@@ -1,0 +1,23 @@
+{
+  "name": "node-rest-api-template",
+  "version": "0.0.0",
+  "description": "Nodejs REST API Based on Free Code Camp Tutorial",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com:brencon/node-rest-api-template.git"
+  },
+  "keywords": [
+    "nodejs",
+    "fastify",
+    "rest",
+    "api",
+    "swagger",
+    "mongodb"
+  ],
+  "author": "Brendan Conrad",
+  "license": "MIT"
+}
